@@ -6,7 +6,7 @@ const errors = require('../utils/errors');
 const ipfs = ipfsAPI('localhost', '5001', {protocol: 'http'});
 
 async function addIPFSFile (data, existingHash) {
-  let ipfsNotation = Buffer.from(data);
+  let ipfsNotation = Buffer.from(JSON.stringify(data));
   let successfullyUnpined = 1;
 
   try {
